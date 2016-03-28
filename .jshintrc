@@ -1,0 +1,18 @@
+{
+  // Enforcing options
+  "eqeqeq": true,
+  "latedef": true,
+  "strict": true,
+  "unused": true,
+  "undef": true,
+
+  // Relaxing options
+  "esnext": true,
+  "eqnull": true,
+
+  // Environments
+  "node": true,
+  "browser": true,
+  "browserify": true,
+  "jquery": true
+}

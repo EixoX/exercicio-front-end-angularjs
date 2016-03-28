@@ -1,0 +1,99 @@
+main( class='main expanded', ng-controller='ChartsController' )
+  div( class='row charts overview' )
+    ul( class='accordion' data-accordion, role='tablist' )
+      li( class='accordion-item is-active' data-accordtion-item )
+        a( href='#', class='accordion-title' ) 
+          h3 Visão Geral
+        div( href='#', class='accordion-content', data-tab-content )
+          div( class='row' )
+            div( class='columns' )
+              table
+                thead
+                  th( class='text-center',  ng-repeat='item in names' ) {{ item }}
+                  
+                tbody
+                  tr
+                    td( class='text-center indicators', ng-repeat='item in subscribers' ) {{ item }}
+                  tr
+                    td( class='text-center', ng-repeat='description in descriptions' ) {{ description }}
+          
+      li( class='accordion-item' data-accordtion-item )
+        a( href='#', class='accordion-title' ) 
+          h3 Mantidas
+        div( class='accordion-content', data-tab-content )
+          div( class='row' )
+            div( class='columns medium-8' )
+              h4 Descrição
+              table
+                thead
+                  th( class='text-center',  ng-repeat='item in keptType' ) {{ item }}
+                  
+                tbody
+                  tr
+                    td( class='text-center indicators', ng-repeat='item in keptCount' ) {{ item }}
+                    
+            div( class='columns medium-4' )                  
+              h4 Tipo de assinatura
+              table
+                thead
+                  th( class='text-center',  ng-repeat='item in keptSubName' ) {{ item }}
+                  
+                tbody
+                  tr
+                    td( class='text-center indicators', ng-repeat='item in keptSubCount' ) {{ item }}
+    
+      li( class='accordion-item' data-accordion-item )
+        a( href='#', class='accordion-title' ) 
+          h3 Novas
+        div( class='accordion-content', data-tab-content )
+          div( class='row' )
+            div( class='column medium-8' )
+              h4 Descrição
+              table
+                thead
+                  th( class='text-center',  ng-repeat='item in newClientsType' ) {{ item }}
+                  
+                tbody
+                  tr
+                    td( class='text-center indicators', ng-repeat='item in newClientsSubscribers' ) {{ item }}
+                    
+            div( class='columns medium-4' )
+              h4 Tipo de assinatura
+              table
+                thead
+                  th( class='text-center',  ng-repeat='item in keptSubName' ) {{ item }}
+                  
+                tbody
+                  tr
+                    td( class='text-center indicators', ng-repeat='item in keptSubCount' ) {{ item }}
+      
+
+  div( class='row charts overview' )
+    div( class='columns' )
+      h3 Visão geral
+      //- Chart
+      canvas( id='lineChart' )
+              
+  div( class='row charts kept-signatures' )
+    h3 Mantidas
+    div( class='columns medium-8' )
+      h4 Descrição          
+      canvas( id='barChart' )
+      
+    div( class='columns medium-4' )
+      h4 Tipo de assinatura
+      canvas( id='radarChart' )
+      
+  div( class='row charts new-signatures' )
+    h3 Novas
+    div( class='column medium-8' )
+      h4 Descrição      
+      canvas( id='newSubscribers' )
+      
+    
+    div( class='column medium-4' )
+      h4 Tipo de Assinatura            
+      canvas( id='newSubcribersType' )
+            
+block main
+  

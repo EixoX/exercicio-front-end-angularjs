@@ -1,0 +1,29 @@
+//- Loading Components
+doctype
+html( class='no-js', ng-app='chartApp' )
+  head
+    meta( charset='utf-8' )
+    meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+    title
+    meta( name='description', content='' )
+    meta( name='viewport', content='width=device-width, initial-scale=1' )
+    //- Stylesheets
+    link( rel='stylesheet', href='css/main.min.css' )
+    //- Header Scripts
+    script( src='vendor/modernizr/src/Modernizr.js' )
+  
+  body
+    <!--[if lt IE 8]>
+    p( class='browsehappy' )
+      | You are using an <strong>outdated</strong> browser.
+      | Please <a href="http://browsehappy.com/">upgrade your browser</a>
+      | to improve your experience.
+    <![endif]-->
+
+    //- Add your site or application content here
+    include ../partials/header
+    include ../partials/sidebar
+    include ../partials/main
+  
+    //- Body Scripts
+    include ../partials/assets
