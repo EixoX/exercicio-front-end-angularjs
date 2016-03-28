@@ -25,6 +25,10 @@ build/Release
 
 # Dependency directory
 node_modules
+/app
+/assets/vendor
+/assets/.DS_Store
+.DS_Store
 
 # Optional npm cache directory
 .npm

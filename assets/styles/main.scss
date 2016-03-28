@@ -1,0 +1,81 @@
+/* Foundation Based */
+
+@import 'assets/vendor/foundation-sites/assets/foundation';
+
+/* Variables */
+// -> colors
+$color-white: #fff;
+$color-black: #000;
+$color-clouds: #ecf0f1;
+$color-grey: #eee;
+$color-mid-grey: #ccc;
+$color-dark-blue: #637b85;
+$color-mid-blue: #d0dde3;
+$color-green: #2c9c69;
+$color-turquoise: #1abc9c;
+$color-yellow: #dbba34;
+$color-red: #c62f29;
+
+/* Generics styles */
+body {
+  width: 100%;
+  height: 100%;
+  background-color: $color-white;
+}
+
+.header {
+  box-shadow: 0 0 .2rem;
+
+  .logo {
+    display: block;
+
+    img {
+      max-width: 45%;
+    }
+
+    span {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.main {
+  padding: 2rem 0;
+
+  .charts {
+    background-color: $color-clouds;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+
+    canvas {
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+
+      &#lineChart,
+      &#barChart {
+        background-color: $color-grey;
+      }
+    }
+
+    &.overview,
+    &.kept-signatures ,
+    &.new-signatures {
+      box-shadow: 0 0 .2rem $color-dark-blue;
+    }
+  }
+
+  table {
+    box-shadow: 0 0 .2rem $color-dark-blue;
+
+    .indicators {
+      font-size: 2em;
+      font-weight: 700;
+    }
+  }
+}
