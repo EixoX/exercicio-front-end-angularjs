@@ -16,13 +16,13 @@
         
     });
     
-    
     // Dashboard
     app.controller('NewSubsCtrl', function ($scope, Services) {
         
         $scope.titulo = "";
         $scope.labels = [];
         $scope.data = [];
+        $scope.total = "";
         var geral = {};
         
         
@@ -34,8 +34,6 @@
                         
                         geral[key] = value;
                         
-                        
-                        
                     });
                     
                     console.log(geral);
@@ -46,6 +44,8 @@
                         $scope.labels[key] = value.subscriptionName;
                         $scope.data[key] = value.subscriberCount;
                     })
+                    
+                    $scope.total = geral[3].subscriberCount;
                     
                 } else {
                     console.log('Error');
@@ -62,6 +62,7 @@
         $scope.titulo = "";
         $scope.labels = [];
         $scope.data = [];
+        $scope.total = "";
         var geral = {};
         
         
@@ -81,6 +82,8 @@
                         $scope.labels[key] = value.subscriptionName;
                         $scope.data[key] = value.subscriberCount;
                     })
+                    
+                    $scope.total = geral[2].subscriberCount;
                     
 
                 } else {

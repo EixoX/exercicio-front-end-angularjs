@@ -17,62 +17,63 @@
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
+           
+           <button class="btn btn-default" id="toggle-sidebar" type="button"><i class="fa fa-navicon"></i></button>
+           
             <div class="navbar-header">
-                <a href="#" class="navbar-brand"><i class="fa fa-apple"></i> Angular Teste</a>
+                <a href="#" class="navbar-brand">Eixo X | <small>Exercício Front-end AngularJs</smallr></a>
             </div>
-
+            
             <ul class="nav navbar-nav top-nav navbar-right pull-xs-right top-right-nav">
                 <li class="nav-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
                 <li class="nav-item"><a href="#"><i class="fa fa-bell"></i></a></li>
                 <li class="dropdown nav-item">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Johnny Rivers <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Ace Ventura <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                        <li><a href="#"><i class="fa fa-user"></i> Perfil</a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i> Mensagens</a></li>
+                        <li><a href="#"><i class="fa fa-gear"></i> Configuração</a></li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-envelope"></i> Inbox</a></li>
-                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
-                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                        <li><a href="#"><i class="fa fa-power-off"></i> Sair</a></li>
                     </ul>
                 </li>
             </ul>
-
         </div>
     </nav>
-
+        
     <main>
-        <nav class="sidebar">
+
+        <aside class="sidebar">
 
             <figure class="text-center">
-                <img src="http://lorempixel.com/100/100/people/1/" class="img-circle" alt="Foto do perfil">
-                <figcaption>Johnny Rivers</figcaption>
+                <img src="img/jim-profile.jpg" class="img-circle img-profile" alt="Foto do perfil">
+                <figcaption><h4>Ace Ventura</h4></figcaption>
             </figure>
 
             <ul class="list-group">
-                <a class="list-group-item" href="#"><i class="fa fa-home"></i> Home</a>
-                <a class="list-group-item" href="#"><i class="fa fa-bookmark-o"></i> Panel</a>
-                <a class="list-group-item" href="#"><i class="fa fa-table"></i> Table</a>
-                <a class="list-group-item" href="#"><i class="fa fa-area-chart"></i> Chart</a>
-                <a class="list-group-item" href="#"><i class="fa fa-calendar"></i> Calendar</a>
-                <a class="list-group-item" href="#"><i class="fa fa-sign-in"></i> Log In</a>
-                <a class="list-group-item" href="#"><i class="fa fa-file-text"></i> Docs</a>
+                <a class="list-group-item item-active" href="#"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                <a class="list-group-item" href="#"><i class="fa fa-fw fa-bookmark-o"></i> Painel</a>
+                <a class="list-group-item" href="#"><i class="fa fa-fw fa-table"></i> Tabela</a>
+                <a class="list-group-item" href="#"><i class="fa fa-fw fa-area-chart"></i> Gráfico</a>
+                <a class="list-group-item" href="#"><i class="fa fa-fw fa-calendar"></i> Calendário</a>
+                <a class="list-group-item" href="#"><i class="fa fa-fw fa-file-text"></i> Documentos</a>
             </ul>
-        </nav>
+        </aside>
 
-        <div class="main-container">
+        <section class="main-container">
 
             <div class="container-fluid">
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Dashboard</h2>
-                        <h4>Statistics Overview</h4>
+                        <h1>Dashboard</h1>
+                        <h4>Visão Geral das Estatísticas</h4>
+                        <hr>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <div class="panel panel-success" ng-controller="NewSubsCtrl">
                             <div class="panel-heading">
                                 <h3 class="panel-title">{{ titulo }}</h3>
@@ -83,7 +84,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <div class="panel panel-primary" ng-controller="KeptSubsCtrl">
                             <div class="panel-heading">
                                 <h3 class="panel-title">{{ titulo }}</h3>
@@ -94,17 +95,20 @@
                         </div>
                     </div>
 
-                    <div class="col-md-2" ng-controller="PendingSubsCtrl">
-                        <div class="panel panel-danger">
+                    <div class="col-md-4">
+                        <div class="panel panel-danger" ng-controller="PendingSubsCtrl">
                             <div class="panel-heading">
                                 <h3 class="panel-title">{{ titulo }}</h3>
                             </div>
-                            <div class="panel-body">
-                                <h1 class="text-center">{{ numeros }}</h1>
+                            <div class="panel-body text-center">
+                                <h3>Agora mesmo</h3>
+                                <h1>{{ numeros }}</h1>
+                                <h4>Assinaturas em Aberto</h4>
                             </div>
                         </div>
                     </div>
-                </div> <!-- Fim Div Row -->
+                </div>
+                <!-- Fim Div Row -->
 
                 <div class="row">
                     <div class="col-md-12">
@@ -132,29 +136,34 @@
                             </table>
                         </div>
 
-                    </div> <!-- Fim Div Col-Md-12 -->
-                </div> <!-- Fim Div Row -->
+                    </div>
+                    <!-- Fim Div Col-Md-12 -->
+                </div>
+                <!-- Fim Div Row -->
 
-            </div> <!-- Fim Div Container Fluid -->
+            </div>
+            <!-- Fim Div Container Fluid -->
 
             <footer>
                 <div class="container-fluid">
-                    <div class="col-md-6 text-left">
-                        <small>[ Thiago Capelo ] [ Front-End ]</small>
+                    <hr>
+                    <div class="col-xs-12 col-md-6 sign-footer">
+                        <small><strong>[ Thiago Capelo ]</strong> [ Front-End ]</small>
                     </div>
-                    <div class="col-md-6 text-right">
+                    <div class="col-xs-12 col-md-6 social-media">
                         <a href="https://github.com/thiagokpelo" title="Github"><i class="fa fa-github fa-2x"></i></a>
                         <a href="https://twitter.com/thiagocapelo" title="Twitter"><i class="fa fa-twitter fa-2x"></i></a>
                     </div>
                 </div>
             </footer>
 
-        </div> <!-- Fim Container Dashboard -->
+        </section><!-- Fim Container Dashboard -->
 
     </main>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="scripts/all.js"></script>
 
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/Chart.js/Chart.min.js"></script>
