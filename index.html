@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dashAngular">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Angular</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.min.css">
+    <link rel="stylesheet" href="styles/all.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid">
+
+        <div class="row">
+                
+            <div class="col-md-2">
+                
+                <figure class="text-center">
+                    <img src="http://lorempixel.com/100/100/people/1/" class="img-circle" alt="Foto do perfil">
+                    <figcaption>Johnny Rivers</figcaption>
+                </figure>
+
+                <nav>
+                    <div>Menu</div>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="#"><i class="fa fa-bookmark-o"></i> Panel</a></li>
+                        <li><a href="#"><i class="fa fa-table"></i> Table</a></li>
+                        <li><a href="#"><i class="fa fa-area-chart"></i> Chart</a></li>
+                        <li><a href="#"><i class="fa fa-calendar"></i> Calendar</a></li>
+                        <li><a href="#"><i class="fa fa-sign-in"></i> Log In</a></li>
+                        <li><a href="#"><i class="fa fa-file-text"></i> Docs</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-md-10">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="col-md-5">
+                            <div class="panel panel-success" ng-controller="NewSubsCtrl">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{ titulo }}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-legend="true"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="panel panel-primary" ng-controller="KeptSubsCtrl">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{ titulo }}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-legend="true"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2" ng-controller="PendingSubsCtrl">
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{ titulo }}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <h1 class="text-center">{{ numeros }}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div Row -->
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="col-md-12">
+                            <div class="panel panel-default" ng-controller="GeralSubsCtrl">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{ titulo }}</h3>
+                                </div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nome</th>
+                                            <th>Descrição</th>
+                                            <th>Quantidade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="assinatura in geral">
+                                            <td>{{ assinatura.group.id }}</td>
+                                            <td>{{ assinatura.group.name }}</td>
+                                            <td>{{ assinatura.group.description }}</td>
+                                            <td>{{ assinatura.subscriberCount }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Div Row -->
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-center">
+        <h4>&#60; / Thiago Capelo &#62;</h4>
+        <h5>[ - Front-End - ]</h5>
+        <a href="https://github.com/thiagokpelo" title="Github"><i class="fa fa-github fa-3x"></i></a>
+    </footer>
+
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/Chart.js/Chart.min.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src="scripts/app.js"></script>
+
+</body>
+
+</html>
