@@ -1,7 +1,7 @@
 # Exercício de front-end com Angular-JS
 
-Nome: Thiago Capelo··
-E-mail: thiago@kpelo.com.br··
+Nome: Thiago Capelo  
+E-mail: thiago@kpelo.com.br  
 Twitter: @thiagocapelo
 
 ## O dashboard
