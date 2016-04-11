@@ -1,10 +1,11 @@
 (function () {
     'use strict';
     
-    var app = angular.module('dashAngular', ['chart.js']);
-    
-    // Call Service with Json
-    app.factory('Services', function ($http) {
+    angular
+    .module('dashAngular',
+            ['chart.js']
+    )
+    .factory('Services', function ($http) {
         
         var subscribers = {};
         
@@ -14,17 +15,14 @@
         
         return subscribers;
         
-    });
-    
-    // Dashboard
-    app.controller('NewSubsCtrl', function ($scope, Services) {
+    })
+    .controller('NewSubsCtrl', function ($scope, Services) {
         
         $scope.titulo = "";
         $scope.labels = [];
         $scope.data = [];
         $scope.total = "";
         var geral = {};
-        
         
         Services.getData()
             .success(function (response) {
@@ -35,8 +33,6 @@
                         geral[key] = value;
                         
                     });
-                    
-                    console.log(geral);
                     
                     $scope.titulo = "Assinaturas " + geral[3].group.name;
                     
@@ -55,9 +51,8 @@
                 console.log(error);
             })
         
-    });
-    
-    app.controller('KeptSubsCtrl', function ($scope, Services) {
+    })
+    .controller('KeptSubsCtrl', function ($scope, Services) {
         
         $scope.titulo = "";
         $scope.labels = [];
@@ -94,9 +89,8 @@
                 console.log(error);
             })
         
-    });
-    
-    app.controller('PendingSubsCtrl', function ($scope, Services) {
+    })
+    .controller('PendingSubsCtrl', function ($scope, Services) {
         
         $scope.titulo = "";
         var geral = {};
@@ -123,9 +117,8 @@
                 console.log(error);
             })
         
-    });
-    
-    app.controller('GeralSubsCtrl', function ($scope, Services) {
+    })
+    .controller('GeralSubsCtrl', function ($scope, Services) {
         
         $scope.titulo = "Assinaturas Geral";
         $scope.geral = {}
