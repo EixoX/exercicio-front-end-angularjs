@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard - Angular</title>
+    <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
@@ -17,122 +18,143 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="#" class="navbar-brand">Dashboard</a>
+                <a href="#" class="navbar-brand"><i class="fa fa-apple"></i> Angular Teste</a>
             </div>
+
+            <ul class="nav navbar-nav top-nav navbar-right pull-xs-right top-right-nav">
+                <li class="nav-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                <li class="nav-item"><a href="#"><i class="fa fa-bell"></i></a></li>
+                <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Johnny Rivers <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i> Inbox</a></li>
+                         <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
+                         <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+
         </div>
     </nav>
 
-    <main class="container-fluid">
+    <main>
+        <nav class="sidebar">
 
-        <div class="row">
-                
-            <div class="col-md-2">
-                
-                <figure class="text-center">
-                    <img src="http://lorempixel.com/100/100/people/1/" class="img-circle" alt="Foto do perfil">
-                    <figcaption>Johnny Rivers</figcaption>
-                </figure>
+            <figure class="text-center">
+                <img src="http://lorempixel.com/100/100/people/1/" class="img-circle" alt="Foto do perfil">
+                <figcaption>Johnny Rivers</figcaption>
+            </figure>
 
-                <nav>
-                    <div>Menu</div>
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                        <li><a href="#"><i class="fa fa-bookmark-o"></i> Panel</a></li>
-                        <li><a href="#"><i class="fa fa-table"></i> Table</a></li>
-                        <li><a href="#"><i class="fa fa-area-chart"></i> Chart</a></li>
-                        <li><a href="#"><i class="fa fa-calendar"></i> Calendar</a></li>
-                        <li><a href="#"><i class="fa fa-sign-in"></i> Log In</a></li>
-                        <li><a href="#"><i class="fa fa-file-text"></i> Docs</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <ul class="list-group">
+                <a class="list-group-item" href="#"><i class="fa fa-home"></i> Home</a>
+                <a class="list-group-item" href="#"><i class="fa fa-bookmark-o"></i> Panel</a>
+                <a class="list-group-item" href="#"><i class="fa fa-table"></i> Table</a>
+                <a class="list-group-item" href="#"><i class="fa fa-area-chart"></i> Chart</a>
+                <a class="list-group-item" href="#"><i class="fa fa-calendar"></i> Calendar</a>
+                <a class="list-group-item" href="#"><i class="fa fa-sign-in"></i> Log In</a>
+                <a class="list-group-item" href="#"><i class="fa fa-file-text"></i> Docs</a>
+            </ul>
+        </nav>
 
-            <div class="col-md-10">
+        <div class="main-container">
+
+            <div class="container-fluid">
 
                 <div class="row">
-
                     <div class="col-md-12">
-                        <div class="col-md-5">
-                            <div class="panel panel-success" ng-controller="NewSubsCtrl">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">{{ titulo }}</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-legend="true"></canvas>
-                                </div>
-                            </div>
-                        </div>
+                        <h2>Dashboard</h2>
+                        <h4>Statistics Overview</h4>
+                    </div>
+                </div>
 
-                        <div class="col-md-5">
-                            <div class="panel panel-primary" ng-controller="KeptSubsCtrl">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">{{ titulo }}</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-legend="true"></canvas>
-                                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="panel panel-success" ng-controller="NewSubsCtrl">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">{{ titulo }}</h3>
                             </div>
-                        </div>
-
-                        <div class="col-md-2" ng-controller="PendingSubsCtrl">
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">{{ titulo }}</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <h1 class="text-center">{{ numeros }}</h1>
-                                </div>
+                            <div class="panel-body">
+                                <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-legend="true"></canvas>
                             </div>
                         </div>
                     </div>
 
-                </div>
-                <!-- Div Row -->
-
-                <div class="row">
-
-                    <div class="col-md-12">
-                        <div class="col-md-12">
-                            <div class="panel panel-default" ng-controller="GeralSubsCtrl">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">{{ titulo }}</h3>
-                                </div>
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Nome</th>
-                                            <th>Descrição</th>
-                                            <th>Quantidade</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="assinatura in geral">
-                                            <td>{{ assinatura.group.id }}</td>
-                                            <td>{{ assinatura.group.name }}</td>
-                                            <td>{{ assinatura.group.description }}</td>
-                                            <td>{{ assinatura.subscriberCount }}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                    <div class="col-md-5">
+                        <div class="panel panel-primary" ng-controller="KeptSubsCtrl">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">{{ titulo }}</h3>
+                            </div>
+                            <div class="panel-body">
+                                <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-legend="true"></canvas>
                             </div>
                         </div>
                     </div>
 
-                </div>
-                <!-- Div Row -->
+                    <div class="col-md-2" ng-controller="PendingSubsCtrl">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">{{ titulo }}</h3>
+                            </div>
+                            <div class="panel-body">
+                                <h1 class="text-center">{{ numeros }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Fim Div Row -->
 
-            </div>
-        </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default" ng-controller="GeralSubsCtrl">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">{{ titulo }}</h3>
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nome</th>
+                                        <th>Descrição</th>
+                                        <th>Quantidade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="assinatura in geral">
+                                        <td>{{ assinatura.group.id }}</td>
+                                        <td>{{ assinatura.group.name }}</td>
+                                        <td>{{ assinatura.group.description }}</td>
+                                        <td>{{ assinatura.subscriberCount }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div> <!-- Fim Div Col-Md-12 -->
+                </div> <!-- Fim Div Row -->
+
+            </div> <!-- Fim Div Container Fluid -->
+
+            <footer>
+                <div class="container-fluid">
+                    <div class="col-md-6 text-left">
+                        <small>[ Thiago Capelo ] [ Front-End ]</small>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <a href="https://github.com/thiagokpelo" title="Github"><i class="fa fa-github fa-2x"></i></a>
+                        <a href="https://twitter.com/thiagocapelo" title="Twitter"><i class="fa fa-twitter fa-2x"></i></a>
+                    </div>
+                </div>
+            </footer>
+
+        </div> <!-- Fim Container Dashboard -->
 
     </main>
 
-    <footer class="text-center">
-        <h4>&#60; / Thiago Capelo &#62;</h4>
-        <h5>[ - Front-End - ]</h5>
-        <a href="https://github.com/thiagokpelo" title="Github"><i class="fa fa-github fa-3x"></i></a>
-    </footer>
-
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/Chart.js/Chart.min.js"></script>

@@ -1,3 +1,58 @@
+html, body {
+	font-size: 1rem;
+}
+
 main {
-    padding-top: 100px;
+    position: absolute;
+    top: 51px;
+    left:0;
+}
+
+.sidebar {
+	position: fixed;
+    z-index: 3;
+    top: 50px;
+    left: 225px;
+    width: 225px;
+    margin-left: -225px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    background-color: #ccc;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-top: 25px;
+    padding-bottom: 40px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.sidebar .list-group .list-group-item{
+	background: #ccc;
+    border: 0;
+    border-radius: 0;
+    color: #999;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+}
+
+.sidebar .list-group .list-group-item:hover {
+	background: #bbb;
+	text-decoration: none;
+}
+
+.main-container {
+	margin: 0 0 0 225px;
+    padding: 10px;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.fa-github {
+	color: #333;
 }
