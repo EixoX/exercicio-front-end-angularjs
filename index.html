@@ -116,24 +116,26 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title">{{ titulo }}</h3>
                             </div>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Nome</th>
-                                        <th>Descrição</th>
-                                        <th>Quantidade</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr ng-repeat="assinatura in geral">
-                                        <td>{{ assinatura.group.id }}</td>
-                                        <td>{{ assinatura.group.name }}</td>
-                                        <td>{{ assinatura.group.description }}</td>
-                                        <td>{{ assinatura.subscriberCount }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nome</th>
+                                            <th>Descrição</th>
+                                            <th>Quantidade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="assinatura in geral">
+                                            <td>{{ assinatura.group.id }}</td>
+                                            <td>{{ assinatura.group.name }}</td>
+                                            <td>{{ assinatura.group.description }}</td>
+                                            <td>{{ assinatura.subscriberCount }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
 
                     </div>
