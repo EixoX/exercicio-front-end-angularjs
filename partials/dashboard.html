@@ -1,0 +1,79 @@
+<div class="container-fluid">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Dashboard - Glambox Edição 1201502</h3>
+		</div>
+
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-12">
+
+					<!-- TABELA DADOS GERAIS -->
+					<div class="table-responsive">
+						<h3 class="text-center">Status das Assinaturas</h3>
+						<table class="table table-bordered table-striped table-geral">
+							<thead>
+								<tr>
+									<th>Nome</th>
+									<th>Descrição</th>
+									<th>Quantidade</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="(key, grupos) in dados.result.children">
+									<td>{{grupos.group.name}}</td>
+									<td>{{grupos.group.description}}</td>
+									<td>{{grupos.subscriberCount}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- /TABELA DADOS GERAIS -->
+				</div>
+			</div>
+			
+			<hr>
+
+			<div class="row">
+				<!-- :::::: COLUNA :::::: -->
+				<div class="col-md-4">
+					<!-- ASSINATURAS PERDIDAS -->	
+					<h3 class="text-center">Assinaturas Perdidas</h3>
+					<canvas id="doughnut" class="chart chart-doughnut" chart-data="perdidas_count" chart-labels="perdidas_name" chart-legend="true"></canvas>
+					<!-- /ASSINATURAS PERDIDAS -->
+				</div>
+				<!-- :::::: COLUNA :::::: -->
+
+				<!-- :::::: COLUNA :::::: -->
+				<div class="col-md-4">
+					<!-- ASSINATURAS MANTIDAS -->	
+					<h3 class="text-center">Assinaturas Mantidas</h3>
+					<canvas id="doughnut" class="chart chart-doughnut" chart-data="mantidas_count" chart-labels="mantidas_name" chart-legend="true"></canvas>
+					<!-- /ASSINATURAS MANTIDAS -->
+				</div>
+				<!-- :::::: COLUNA :::::: -->
+
+				<!-- :::::: COLUNA :::::: -->
+				<div class="col-md-4">
+					<!-- ASSINATURAS MANTIDAS -->	
+					<h3 class="text-center">Assinaturas Conquistadas</h3>
+					<canvas id="doughnut" class="chart chart-doughnut" chart-data="conquistadas_count" chart-labels="conquistadas_name" chart-legend="true"></canvas>
+					<!-- /ASSINATURAS MANTIDAS -->
+				</div>
+				<!-- :::::: COLUNA :::::: -->
+			</div>
+
+			<hr>
+
+			<div class="row">
+				<!-- :::::: COLUNA :::::: -->
+				<div class="col-md-12">
+					<h3 class="text-center">Assinaturas por Tipo de Plano</h3>
+					<canvas id="bar" class="chart chart-bar" chart-data="tipos_data" chart-labels="tipos_periodo" chart-series="tipos_series" chart-colours="tipos_cores"></canvas>
+				</div>
+				<!-- :::::: COLUNA :::::: -->
+			</div>
+
+		</div>
+	</div>
+</div>

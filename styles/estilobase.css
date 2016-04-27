@@ -1,0 +1,8 @@
+.panel{margin-top: 1em;}
+
+.table caption{text-align: center; font-weight: bold;}
+
+.table-geral tbody tr:nth-child(1){background-color: #fcf8e3 !important;}
+.table-geral tbody tr:nth-child(2){background-color: #f2dede !important;}
+.table-geral tbody tr:nth-child(3){background-color: #d9edf7 !important;}
+.table-geral tbody tr:nth-child(4){background-color: #dff0d8 !important;}
