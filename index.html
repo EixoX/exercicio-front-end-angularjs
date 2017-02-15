@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/estilo.css">
+    <script defer src="bower_components/angular/angular.min.js"></script>
+    <script defer src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script defer src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script defer src="bower_components/angular-google-chart/ng-google-chart.min.js"></script>
+    <script defer src="scripts/main.js"></script>
+</head>
+
+<body ng-app="dashboard">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Dashboard</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="jumbotron">
+        <h2 class="text-center">Índice de Assinaturas</h2>
+    </div>
+    <div ng-controller="chartsCtrl">
+      <div class="col-md-6 grafico" google-chart chart="myChartObject" style="height:400px; width:50%;"></div>
+
+      <div class="col-md-6 grafico" google-chart chart="aNovas" style="height:400px; width:50%;"></div>
+    </div>
+</body>
+
+</html>
