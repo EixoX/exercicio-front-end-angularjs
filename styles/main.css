@@ -1,0 +1,21 @@
+body {
+  line-height: 1.50;
+  font-family: 'Cabin', sans-serif;
+}
+
+.info-block { padding: 3% !important; }
+
+.red { color: #F7464A; }
+.green { color: #46BFBD; }
+.yellow { color: #FDB45C; }
+
+.summary-info-numbers { font-size: 72px; }
+.summary-info-text { font-size: 48px; }
+
+.icon { font-size: 30px; margin: 2%; }
+
+footer { font-size: 24px; border-top: 2px solid #f2f2f2; padding: 6%; }
+
+a .icon, a .icon:hover, a .icon:visited { color: black; text-decoration: none; }
+
+.panel-footer-text { font-weight:bold;font-size:24px; }

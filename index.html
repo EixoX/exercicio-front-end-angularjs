@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html ng-app="dashboardApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dashboard</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Scripts -->
+    <script src="bower_components/angular/angular.min.js"></script>
+
+  </head>
+  <body ng-controller="chartsController as chartsCtrl">
+
+    <header class="container page-header text-center">
+      <h1 class="page-title">Glambox Dashboard</h1>
+      <div class="row">
+        <div class="col-md-3 summary-info yellow">
+          <span class="summary-info-numbers">{{chartsCtrl.pendingSubscriptionsInfo.summary.total}}</span>
+          <p class="summary-info-text">{{chartsCtrl.pendingSubscriptionsInfo.name}}</p>
+        </div>
+        <div class="col-md-3 summary-info">
+          <span class="summary-info-numbers">{{chartsCtrl.keptSubscriptionsInfo.summary.total}}</span>
+          <p class="summary-info-text">{{chartsCtrl.keptSubscriptionsInfo.name}}</p>
+        </div>
+        <div class="col-md-3 summary-info green">
+          <span class="summary-info-numbers">{{chartsCtrl.newSubscriptionsInfo.summary.total}}</span>
+          <p class="summary-info-text">{{chartsCtrl.newSubscriptionsInfo.name}}</p>
+        </div>
+        <div class="col-md-3 summary-info red">
+          <span class="summary-info-numbers">{{chartsCtrl.canceledSubscriptionsInfo.summary.total}}</span>
+          <p class="summary-info-text">{{chartsCtrl.canceledSubscriptionsInfo.name}}</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+
+      <div class="row info-block">
+
+        <h2 class="text-center"><strong>{{chartsCtrl.pendingSubscriptionsInfo.title}}</strong></h2>
+        <div class="col-md-offset-4 col-md-4" ng-repeat="chart in chartsCtrl.pendingSubscriptionsInfo.charts">
+            <div class="chart-wrapper">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="text-center">{{chart.name}}</h3>
+                </div>
+                <div class="panel-body">
+                  <canvas id="chart-doughnut" class="chart chart-doughnut"
+                    chart-data="chart.data" chart-labels="chart.labels" chart-options="chart.options">
+                  </canvas>
+                </div>
+                <div class="panel-footer text-center">
+                	<p class="panel-footer-text">{{chart.totalInMoney | currency}}</p>
+                </div>
+              </div>
+            </div>
+        </div>
+
+      </div>
+
+      <div class="row info-block">
+
+        <h2 class="text-center"><strong>{{chartsCtrl.keptSubscriptionsInfo.title}}</strong></h2>
+        <div class="col-md-4" ng-repeat="chart in chartsCtrl.keptSubscriptionsInfo.charts">
+            <div class="chart-wrapper">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-heading text-center">{{chart.name}}</h3>
+                </div>
+                <div class="panel-body">
+                  <canvas id="chart-doughnut" class="chart chart-doughnut"
+                    chart-data="chart.data" chart-labels="chart.labels" chart-options="chart.options">
+                  </canvas>
+                </div>
+                <div class="panel-footer text-center">
+                	<p class="panel-footer-text">{{chart.totalInMoney | currency}}</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="row info-block">
+
+        <h2 class="text-center"><strong>{{chartsCtrl.canceledSubscriptionsInfo.title}}</strong></h2>
+        <div class="col-md-6" ng-repeat="chart in chartsCtrl.canceledSubscriptionsInfo.charts">
+          <div class="chart-wrapper">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="text-center">{{chart.name}}</h3>
+              </div>
+              <div class="panel-body">
+                <canvas id="chart-pie" class="chart chart-pie"
+                  chart-data="chart.data" chart-labels="chart.labels" chart-options="chart.options">
+                </canvas>
+              </div>
+              <div class="panel-footer text-center">
+                <p class="panel-footer-text">{{chart.totalInMoney | currency}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row info-block">
+
+        <h2 class="text-center"><strong>{{chartsCtrl.newSubscriptionsInfo.title}}</strong></h2>
+        <div class="col-md-12" ng-repeat="chart in chartsCtrl.newSubscriptionsInfo.charts">
+          <div class="chart-wrapper">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="text-center">{{chart.name}}</h3>
+              </div>
+              <div class="panel-body">
+                <canvas id="polar-area" class="chart chart-polar-area"
+                  chart-data="chart.data" chart-labels="chart.labels" chart-options="chart.options">
+                </canvas>
+              </div>
+              <div class="panel-footer text-center">
+                <p class="panel-footer-text">{{chart.totalInMoney | currency}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <footer class="container">
+
+      <div class="row text-center">
+        <div class="col-sm-12 col-md-12">
+          <a href="https://facebook.com/kaio.amaral.12" target="_blank"><i class="icon fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/kaio_dev" target="_blank" target="_blank"><i class="icon fa fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://github.com/kaioamaral" target="_blank"><i class="icon fa fa-github" aria-hidden="true"></i></a>
+          <a href="https://br.linkedin.com/in/kaio-amaral" target="_blank"><i class="icon fa fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://medium.com/@kaioamaral" target="_blank"><i class="icon fa fa-medium" aria-hidden="true"></i></a>
+        </div>
+        <div class="col-sm-12 col-md-12">
+            <a href="kaioamaral.github.io" style="color:black">
+              <span class="fa fa-code"></span> with <span class="fa fa-heart-o"></span> by Kaio Amaral
+            </a>
+        </div>
+      </div>
+
+    </footer>
+
+    <!-- Bower components -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/chart.js/dist/Chart.min.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="scripts/app.module.js"></script>
+    <script src="scripts/factories/infogroup-builder.js"></script>
+    <script src="scripts/providers/data-provider.js"></script>
+    <script src="scripts/controllers/chart-controller.js"></script>
+  </body>
+</html>
