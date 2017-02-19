@@ -1,0 +1,51 @@
+@import '../common/widths';
+@import '../common/basic';
+
+body, html {
+	font: $font-stack;
+	height: 100%;
+}
+
+.dashboard {
+	max-width: 99%;
+	margin-left: 1%;
+
+	@media(min-width: $tablet-size-2) {
+		max-width: 100%;
+		margin-left: 0%;
+	}
+}
+
+.panel {
+	max-width: 99%;
+	font: $font-stack;
+}
+
+.glyphicon-panel {
+	float: right;
+	display: none;
+	@media(min-width: $phone-size-1) {
+		display: block;
+	}
+}
+
+.panel-heading {
+	text-align: center;
+}
+
+.panel-body.subpanel-body {
+	div {
+		.chart {
+			margin-left: 0%;
+		}
+	}
+
+	.total {
+		text-align: center;
+		margin-left: 40%;
+		@media(min-width: $phone-size-1) {
+			margin-left: 45%;
+		}
+	}
+}
+

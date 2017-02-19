@@ -1,0 +1,13 @@
+<div class="panel panel-default" ng-show="!showPanel">
+	<div class="panel-heading">
+		<div ng-show="showBody">
+			<h3 class="panel-title">{{info.name}}<span class="glyphicon glyphicon-panel glyphicon-chevron-down" ng-click="showBody = ! showBody"><span class="glyphicon glyphicon-panel glyphicon-remove" ng-click="showPanel = ! showPanel"></span></span></h3>
+		</div>
+		<div ng-show="!showBody">
+			<h3 class="panel-title">{{info.name}}<span class="glyphicon glyphicon-panel glyphicon-chevron-up" ng-click="showBody = ! showBody"><span class="glyphicon glyphicon-panel glyphicon-remove" ng-click="showPanel = ! showPanel"></span></span></h3>
+		</div>
+	</div>
+	<div class="panel-body subpanel-body total-subpanel-body"  ng-show="!showBody">
+		{{info.value | brnumber}}
+	</div>
+</div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glambox</title>
+
+	<!-- CSS import -->
+	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<link href="styles/common/header.css" rel="stylesheet">
+	<link href="styles/common/index.css" rel="stylesheet">
+	<link href="styles/dashboard/dashboard.view.css" rel="stylesheet">
+</head>
+<body ng-app="glamboxApp" class="container-fluid">
+
+	<div ng-include src="'templates/common/header.html'"></div>
+		
+	<div ng-view class="view"></div>
+
+	
+	<!-- Bootstrap and Jquery import -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- AngularJs import -->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+	<script src="bower_components/d3/d3.min.js"></script>
+	<script src="bower_components/nvd3/build/nv.d3.min.js"></script>
+	<script src="bower_components/angular-nvd3/dist/angular-nvd3.min.js"></script>	
+	<!-- Project import -->
+	<script src="scripts/dashboard/dashboard.module.js"></script>
+	<script src="scripts/dashboard/dashboard.chart.directive.js"></script>
+	<script src="scripts/dashboard/dashboard.config.js"></script>
+	<script src="scripts/dashboard/dashboard.factory.js"></script>
+	<script src="scripts/dashboard/dashboard.controller.js"></script>
+	<script src="scripts/common/glambox.module.js"></script>
+	<script src="scripts/common/glambox.config.js"></script>
+	<script src="scripts/common/glambox.number.filter.js"></script>
+</body>
+</html>
