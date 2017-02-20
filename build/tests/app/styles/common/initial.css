@@ -1,9 +1,0 @@
-.view {
-  background-color: #f9f9f9;
-  display: block; }
-  @media (min-width: 768px) {
-    .view {
-      float: left;
-      display: inline;
-      margin-top: 7%;
-      margin-left: 12%; } }
