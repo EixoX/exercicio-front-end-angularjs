@@ -30,3 +30,35 @@ Seu objetivo neste exercício é construir um dashboard que contenha dois índic
 ... um exemplo de dashboard para estimular suas idéias ...
 ![dashboard example](https://blog.kissmetrics.com/wp-content/uploads/2013/09/dashboard-widget-types.png)
 
+
+## Solução
+### Sobre
+
+- Autor: fernandoteruo@gmail.com
+- Idiomas: Português e Inglês
+- Localização: Brasil
+
+### Projeto
+- Tecnologias e linguagens: javascript, html, css, sass, angularjs (ng1), bootstrap, jasmine, karma, protractor, angular-resource, angular-route, angular-mocks, bower, npm
+
+- Estrutura
+	- app
+		- arquivos da aplicação
+	- e2e-tests
+		- arquivos de testes end-to-end
+
+### Dev
+	- Para rodar a aplicação em modo dev, utilize o comando npm start
+	- Para rodar os testes unitários, utilize o comando npm tests
+	- Para rodar os testes e2e, utilize o comando npm run protractor
+
+### Deploy
+	- Caso queira, rodar em uma pasta de build, criar a pasta Build | xpto | app, onde xpto = build desejado, valores aceitos: dev, prod, tests
+	- Para rodar a aplicação, utilize o comando gulp run --env xpto
+
+
+
+
+
+
+

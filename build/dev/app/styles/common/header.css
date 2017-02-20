@@ -1,0 +1,55 @@
+body, html {
+  font: Roboto, sans-serif;
+  height: 100%; }
+
+.glyphicon-th {
+  color: #ffffff; }
+
+nav.sidebar {
+  color: #000000;
+  background-color: #778899;
+  border-style: none; }
+  @media (min-width: 768px) {
+    nav.sidebar {
+      width: 150px;
+      height: 100%;
+      z-index: 8000;
+      float: left;
+      position: fixed;
+      margin-left: -30px; }
+      nav.sidebar li {
+        width: 100%; } }
+
+.navbar.navbar-inverse.sidebar.navbar-fixed-left .navbar-header {
+  height: 50px; }
+  @media (min-width: 768px) {
+    .navbar.navbar-inverse.sidebar.navbar-fixed-left .navbar-header {
+      width: 100%;
+      background-color: #4d5966; } }
+  .navbar.navbar-inverse.sidebar.navbar-fixed-left .navbar-header .navbar-brand {
+    color: #ffffff;
+    background-color: #4d5966; }
+    @media (min-width: 768px) {
+      .navbar.navbar-inverse.sidebar.navbar-fixed-left .navbar-header .navbar-brand {
+        background-color: transparent;
+        width: 100%;
+        margin-left: 10px; } }
+
+.navbar.navbar-inverse.sidebar.navbar-fixed-left .nav.navbar-nav li a {
+  color: #ffffff;
+  float: left;
+  display: inline; }
+
+@media (min-width: 768px) {
+  .navbar.navbar-inverse.sidebar.navbar-fixed-left .nav.navbar-nav li {
+    width: 100%; } }
+
+#header {
+  color: #ffffff;
+  background-color: #637383;
+  border-style: none;
+  display: none; }
+  @media (min-width: 768px) {
+    #header {
+      display: block;
+      height: 50px; } }
