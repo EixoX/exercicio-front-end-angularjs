@@ -53,7 +53,6 @@ Seu objetivo neste exercício é construir um dashboard que contenha dois índic
 	- Para rodar os testes e2e, utilize o comando npm run protractor
 
 ### Deploy
-	- Caso queira, rodar em uma pasta de build, criar a pasta Build | xpto | app, onde xpto = build desejado, valores aceitos: dev, prod, tests
 	- Para rodar a aplicação, utilize o comando gulp run --env xpto
 
 
