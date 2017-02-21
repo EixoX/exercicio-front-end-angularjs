@@ -1,0 +1,78 @@
+@import 'widths';
+@import 'basic';
+
+@mixin sidebar-colors($color, $bg){
+	color: $color;
+	background-color: $bg;
+	border-style: none;
+}
+
+body, html {
+	font: $font-stack;
+	height: 100%;
+}
+
+.glyphicon-th {
+    color: $second-colour-2;
+}
+
+nav.sidebar{
+	@include sidebar-colors($second-colour-1, $main-colour-1);
+	@media (min-width: $tablet-size-2) {
+        width: $sidebar-width;
+        height: 100%;
+        z-index: 8000;
+        float: left;
+        position: fixed;
+        margin-left: $margin-left-1;
+
+        li {
+        	width: 100%;
+        }
+	}
+}
+
+.navbar.navbar-inverse.sidebar.navbar-fixed-left {
+	.navbar-header {
+		height: $header-height;
+		
+		@media (min-width: $tablet-size-2) {
+			width: 100%;
+			background-color: $main-colour-2;
+		}
+		.navbar-brand {
+			color: $second-colour-2;
+			background-color: $main-colour-2;
+			@media (min-width: $tablet-size-2) {
+				background-color: transparent;
+				width: 100%;
+				margin-left: $margin-left-2;
+			}
+		}
+	}
+	.nav.navbar-nav {
+		li {
+			a {
+				color: $second-colour-2;
+				float: left;
+				display: inline;
+			}
+		}
+
+		@media (min-width: $tablet-size-2) {
+			li {
+				width: 100%;
+			}
+		}
+	}
+}
+
+#header {
+	@include sidebar-colors($second-colour-2, $main-colour-3);
+    display: none;
+
+    @media (min-width: $tablet-size-2) {
+    	display: block;
+    	height: $header-height;
+    }
+}

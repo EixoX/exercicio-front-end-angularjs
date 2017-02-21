@@ -1,0 +1,11 @@
+@import 'widths';
+
+.view {
+	display: block;
+	margin-top: -10px;
+	@media (min-width: $tablet-size-2) {
+		float: left;
+		margin-top: $header-height + 3px;
+		margin-left: $sidebar-width + 5px;
+	}
+}

@@ -1,0 +1,52 @@
+@import '../common/widths';
+@import '../common/basic';
+
+body, html {
+	font: $font-stack;
+	height: 100%;
+}
+
+.dashboard {
+	margin-left: 1%;
+	width:100%;
+
+	@media(min-width: $tablet-size-2) {
+		margin-left: 0%;
+	}
+}
+
+.panel {
+	width:100%;
+	font: $font-stack;
+}
+
+.glyphicon-panel {
+	float: right;
+	display: none;
+	@media(min-width: $phone-size-1) {
+		display: block;
+	}
+}
+
+.panel-heading {
+	text-align: center;
+}
+
+.panel-body.subpanel-body {
+	div {
+		.chart {
+			padding-bottom: 100%;
+		}
+	}
+
+	.total {
+		text-align: center;
+		margin-left: 40%;
+		font-size: 1.5em;
+		@media(min-width: $phone-size-1) {
+			margin-left: 45%;
+		}
+	}
+}
+
+

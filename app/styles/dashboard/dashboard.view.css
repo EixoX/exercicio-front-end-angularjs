@@ -1,0 +1,35 @@
+body, html {
+  font: Roboto, sans-serif;
+  height: 100%; }
+
+.dashboard {
+  margin-left: 1%;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .dashboard {
+      margin-left: 0%; } }
+
+.panel {
+  width: 100%;
+  font: Roboto, sans-serif; }
+
+.glyphicon-panel {
+  float: right;
+  display: none; }
+  @media (min-width: 370px) {
+    .glyphicon-panel {
+      display: block; } }
+
+.panel-heading {
+  text-align: center; }
+
+.panel-body.subpanel-body div .chart {
+  padding-bottom: 100%; }
+
+.panel-body.subpanel-body .total {
+  text-align: center;
+  margin-left: 40%;
+  font-size: 1.5em; }
+  @media (min-width: 370px) {
+    .panel-body.subpanel-body .total {
+      margin-left: 45%; } }
