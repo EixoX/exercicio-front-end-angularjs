@@ -1,22 +1,22 @@
 (function() {
 	'use strict';
 
-	angular.module('dashboardApp').controller('DashboardController', ['$scope', 'DashboardFactory', function ($scope, DashboardFactory) {
+	angular.module('dashboardApp').controller('DashboardController', ['$scope','DashboardFactory', function($scope, DashboardFactory) {
 
-		var results = DashboardFactory.query(function () {
+		var results = DashboardFactory.query(function() {
 			for (var i = 0; i < results.length; i++) {
 				var result = results[i];
 				if (result.name === 'Mantidas') {
 					$scope.mantidas = {};
 					$scope.mantidas.total = valuesTotal(result.count);
-					$scope.mantidas.periodChart = valuesPieChart("Por período",result.periods);
+					$scope.mantidas.periodChart = valuesPieChart("Por período", result.periods);
 					$scope.mantidas.typeChart = valuesPieChart("Por tipo", result.types);
 					$scope.mantidas.perTypeChart = valuesStackedBarChart("Tipo/Período", result.types);
 				} else if (result.name === 'Conquistadas') {
 					$scope.conquistadas = {};
 					$scope.conquistadas.total = valuesTotal(result.count);
 					$scope.conquistadas.periodChart = valuesPieChart("Por período", result.periods);
-					$scope.conquistadas.typeChart = valuesPieChart("Por tipo",result.types);
+					$scope.conquistadas.typeChart = valuesPieChart("Por tipo", result.types);
 					$scope.conquistadas.perTypeChart = valuesStackedBarChart("Tipo/Período", result.types);
 				} else if (result.name === 'Perdidas') {
 					$scope.perdidas = {};
@@ -32,7 +32,10 @@
 		});
 
 		function valuesTotal(value) {
-			return {name: "Total", total: value};
+			return {
+				name: "Total",
+				total: value
+			};
 		}
 
 		function valuesPieChart(name, info) {
@@ -40,7 +43,10 @@
 
 			var data = [];
 			for (i = 0; i < info.length; i++) {
-				data.push({key: info[i].name, value: info[i].count});
+				data.push({
+					key: info[i].name,
+					value: info[i].count
+				});
 			}
 
 			var options = {
@@ -87,7 +93,10 @@
 					} else {
 						label = "O";
 					}
-					values.push({label: label, value: value});
+					values.push({
+						label: label,
+						value: value
+					});
 				}
 				var obj = {
 					key: typeName,
@@ -100,25 +109,29 @@
 				chart: {
 					type: 'multiBarHorizontalChart',
 					height: 400,
-	                x: function(d){return d.label;},
-	                y: function(d){return d.value;},
-	                showControls: false,
-	                showValues: true,
-	                duration: 500,
-	                xAxis: {
-	                    showMaxMin: true
-	                },
-	                yAxis: {
-	                	showMaxMin: true,
-	                    tickFormat: function(d){
-	                        return d3.format(',.2f')(d);
-	                    }
-	                }
+					x: function(d) {
+						return d.label;
+					},
+					y: function(d) {
+						return d.value;
+					},
+					showControls: false,
+					showValues: true,
+					duration: 500,
+					xAxis: {
+						showMaxMin: true
+					},
+					yAxis: {
+						showMaxMin: true,
+						tickFormat: function(d) {
+							return d3.format(',.2f')(d);
+						}
+					}
 				}
 			};
 
 			return {
-				name: name, 
+				name: name,
 				data: data,
 				options: options
 			};

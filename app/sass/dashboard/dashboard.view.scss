@@ -7,17 +7,16 @@ body, html {
 }
 
 .dashboard {
-	max-width: 99%;
 	margin-left: 1%;
+	width:100%;
 
 	@media(min-width: $tablet-size-2) {
-		max-width: 100%;
 		margin-left: 0%;
 	}
 }
 
 .panel {
-	max-width: 99%;
+	width:100%;
 	font: $font-stack;
 }
 
@@ -36,16 +35,18 @@ body, html {
 .panel-body.subpanel-body {
 	div {
 		.chart {
-			margin-left: 0%;
+			padding-bottom: 100%;
 		}
 	}
 
 	.total {
 		text-align: center;
 		margin-left: 40%;
+		font-size: 1.5em;
 		@media(min-width: $phone-size-1) {
 			margin-left: 45%;
 		}
 	}
 }
+
 
