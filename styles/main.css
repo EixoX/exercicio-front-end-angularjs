@@ -1,0 +1,10 @@
+body {
+    background: #f5f1ed;
+}
+hr {
+    border-color: #d3d3d3 !important;
+}
+/* chartist override */
+.ct-label {
+    font-size: 1.1rem;
+}

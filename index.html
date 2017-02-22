@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="" ng-app="DashboardApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+    </head>
+    <body ng-controller="Dashboard">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                    <h4 class="text-center">Assinaturas</h4>
+                    <hr>
+                    <chartist
+                        class="ct-chart"
+                        chartist-data="groupsSubsChart"
+                        chartist-chart-type="Bar"></chartist>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="text-center">Pendentes</h4>
+                    <hr>
+                    <chartist
+                        class="ct-chart"
+                        chartist-data="pendingSubsChart"
+                        chartist-chart-type="Bar"></chartist>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="text-center">Perdidas</h4>
+                    <hr>
+                    <chartist
+                        class="ct-chart"
+                        chartist-data="lostSubsChart"
+                        chartist-chart-type="Bar"></chartist>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="text-center">Mantidas</h4>
+                    <hr>
+                    <chartist
+                        class="ct-chart"
+                        chartist-data="maintainedSubsChart"
+                        chartist-chart-type="Bar"></chartist>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="text-center">Conquistadas</h4>
+                    <hr>
+                    <chartist
+                        class="ct-chart"
+                        chartist-data="conqueredSubsChart"
+                        chartist-chart-type="Bar"></chartist>
+                </div>
+            </div>
+        </div>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/chartist/dist/chartist.min.js"></script>
+        <script src="bower_components/angular-chartist.js/dist/angular-chartist.js"></script>
+        <script src="scripts/app.js"></script>
+    </body>
+</html>

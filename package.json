@@ -1,0 +1,23 @@
+{
+  "name": "exercicio-front-end-angularjs",
+  "version": "1.0.0",
+  "description": "Comprove seus super conhecimentos de javascript, de angular js e de frameworks css construindo um dashboard de página única que contenha informações de performance da empresa.",
+  "main": "index.js",
+  "scripts": {
+    "init": "(yarn || npm install) && npm run bower install",
+    "start": "./node_modules/.bin/http-server",
+    "bower": "./node_modules/.bin/bower",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/johnnyGabriel/exercicio-front-end-angularjs.git",
+  "author": "johnnypestana <johnny_gabriel@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnnyGabriel/exercicio-front-end-angularjs/issues"
+  },
+  "homepage": "https://github.com/johnnyGabriel/exercicio-front-end-angularjs#readme",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "http-server": "^0.9.0"
+  }
+}

@@ -30,3 +30,14 @@ Seu objetivo neste exercício é construir um dashboard que contenha dois índic
 ... um exemplo de dashboard para estimular suas idéias ...
 ![dashboard example](https://blog.kissmetrics.com/wp-content/uploads/2013/09/dashboard-widget-types.png)
 
+
+
+**********************************
+
+Instruções para rodar:
+
+1. Clone o repositório;
+2. Tenha a certeza que possui nodejs e npm instalados na máquina;
+3. Na pasta raiz execute o comando "npm run init" para instalar as dependências;
+4. Execute "npm server" para rodar o servidor local;
+5. Abra no navegador o endereço fornecido pelo servidor.

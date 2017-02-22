@@ -1,0 +1,23 @@
+{
+  "name": "exercicio-front-end-angularjs",
+  "homepage": "https://github.com/johnnyGabriel/exercicio-front-end-angularjs",
+  "authors": [
+    "johnnypestana <johnny_gabriel@outlook.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.1",
+    "bootstrap": "^3.3.7",
+    "angular-chartist.js": "^4.3.1",
+    "chartist": "^0.10.1"
+  }
+}
