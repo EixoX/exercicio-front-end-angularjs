@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html ng-app="glamboxApp" ng-cloak>
 <head>
+  <meta charset="utf-8">
   <title>Painel | Glambox</title>
-  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link href="./img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 
-  <!-- Styles -->
+  <!-- Libs -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./bower_components/AdminLTE/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="./bower_components/AdminLTE/dist/css/skins/skin-black.min.css">
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" type="text/css" href="./styles/bundle.min.css">
 
 </head>
-<body layout="column">
+<body class="hold-transition skin-black sidebar-mini fixed">
 
-    <!-- Header -->
+  <div class="wrapper">
+    <!-- Main Header -->
     <ng-include src="'./scripts/app/components/core/headerView.html'"></ng-include>
-    <!-- Content -->
+
+    <!-- Content Wrapper. Contains page content -->
     <ng-view></ng-view>
 
-    <!-- Footer -->
+    <!-- Main Footer -->
     <ng-include src="'./scripts/app/components/core/footerView.html'"></ng-include>
+  </div>
 
-  
-
-  <!-- Scripts -->
+  <!-- Libs -->
   <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- AdminLTE Theme -->
+  <script src="./bower_components/AdminLTE/dist/js/app.min.js"></script>
+  <script src="./bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <!-- ANGULAR -->
   <script src="./bower_components/angular/angular.min.js"></script>
   <script src="./bower_components/angular-route/angular-route.min.js"></script>
 
-
-  <script src="scripts/app/app.js"></script>
+  <!-- GlamboxApp -->
+  <script src="./scripts/app/app.js"></script>
 
 </body>
 </html>
