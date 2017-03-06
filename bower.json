@@ -1,0 +1,27 @@
+{
+  "name": "exercicio-front-end-angularjs",
+  "description": "Comprove seus super conhecimentos de javascript, de angular js e de frameworks css construindo um dashboard de página única que contenha informações de performance da empresa.",
+  "main": "index.js",
+  "authors": [
+    "jeffersonRibeiro <jefferson.ribeiro.contato@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Angular",
+    "Glambox",
+    "painel"
+  ],
+  "homepage": "https://github.com/jeffersonRibeiro/exercicio-front-end-angularjs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2",
+    "jquery": "^3.1.1",
+    "angular-route": "^1.6.2"
+  }
+}
