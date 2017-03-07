@@ -20,6 +20,7 @@
   <link rel="stylesheet" type="text/css" href="./styles/bundle.min.css">
 
 </head>
+<div class="loading-view"></div>
 <body class="hold-transition skin-black sidebar-mini fixed">
 
   <div class="wrapper">
@@ -45,6 +46,15 @@
 
   <!-- GlamboxApp -->
   <script src="./scripts/app/app.js"></script>
+
+  <script>
+    /*
+      Apenas uma simulação de carregamento de página.
+    */ 
+    var timeout = setTimeout( function() {
+      $('.loading-view').fadeOut('fast');
+    }, 500);
+  </script>
 
 </body>
 </html>

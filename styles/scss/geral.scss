@@ -5,3 +5,12 @@
   display: none !important;
 }
 
+.loading-view {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	padding: 15px;
+	z-index: 9999;
+	background: #fff url('../img/glam-loader.gif') no-repeat center; width:100%;height:100%;
+}
+
