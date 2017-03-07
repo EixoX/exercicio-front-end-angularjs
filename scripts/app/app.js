@@ -28,7 +28,10 @@ glamboxApp.config(function($routeProvider){
 var controllers = {};
 
 controllers.overviewController = function($scope){
-	$scope.mensagem = 'Bem vindo ao Angularjs';
+	$scope.pagina = {
+		titulo: 'Assinaturas',
+		subtitulo: 'Visão geral'
+	}
 }
 
 glamboxApp.controller(controllers);
