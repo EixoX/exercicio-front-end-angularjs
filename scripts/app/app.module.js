@@ -1,6 +1,6 @@
 'use strict';
 
-var glamboxApp = angular.module('glamboxApp', ['ngRoute']);
+var glamboxApp = angular.module('glamboxApp', ['ngRoute', 'chart.js']);
 
 /****** SERVICES *******/
 
