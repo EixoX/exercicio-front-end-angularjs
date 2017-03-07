@@ -6,7 +6,7 @@
       <small> {{ pagina.subtitulo }} </small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Início</a></li>
+      <li><a href="#!/"><i class="fa fa-dashboard"></i> Início</a></li>
       <li class="active">Assinaturas {{ glamboxEditionData.group.name }}</li>
     </ol>
   </section>
@@ -67,12 +67,67 @@
             <!-- /.row -->
           </div>
           <!-- /.box-body -->
-          <div class="box-footer no-padding">
-          </div>
-          <!-- /.footer -->
         </div>
         <!-- /.box -->
       </div>
+    </div>
+    
+    <h3 ng-if="glamboxEditionData.children.length > 0">Detalhes</h3>
+
+    
+    <div class="row">
+      <span ng-repeat="children in glamboxEditionData.children">
+        <div class="col-md-3">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title">{{children.group.name}}</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="chart-responsive">
+                    <p class="text-center text-sm">{{children.group.description}}</p>
+                    <canvas id="pie" class="chart chart-pie"
+                      chart-data="children.data.data" chart-labels="children.data.labels" chart-options="options">
+                    </canvas>
+
+                  </div>
+                  <!-- ./chart-responsive -->
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer no-padding">
+              <ul class="nav nav-pills nav-stacked">
+                <li class="bg-default no-hover"><a href="javascritp:void(0);" class="text-bold">Tipo
+                  <span class="pull-right text-bold"><i class=""></i> 
+                    Qtd.</span></a>
+                </li>
+                <li ng-repeat="sub in children.subs">
+                  <a href="javascritp:void(0);">{{sub.subscriptionName}}
+                  <span class="pull-right"><i class=""></i> 
+                    {{sub.subscriberCount}}</span>
+                  </a>
+                </li>
+                <li><a href="javascritp:void(0);">Total
+                  <span class="pull-right"><i class=""></i> 
+                    {{children.subscriberCount}}</span></a>
+                </li>
+              </ul>
+            </div>
+            <!-- /.footer -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </span>
     </div>
     
 

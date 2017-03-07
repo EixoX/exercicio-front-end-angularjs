@@ -7,9 +7,6 @@ controllers.overviewController = function($scope, GlamboxEditionData){
 	}
 
 	$scope.glamboxEditionData = GlamboxEditionData;
-
-
-	console.log(GlamboxEditionData);
 }
 
 controllers.assinaturasDetalheController = function($scope, $route, $location, GlamboxEditionData){
@@ -29,6 +26,27 @@ controllers.assinaturasDetalheController = function($scope, $route, $location, G
 	//informações específicas da página atual
 	$scope.glamboxEditionData = GlamboxEditionData.assinaturas[tipoAssinatura];
 	
+	for(var i= 0; i < $scope.glamboxEditionData.children.length; i++){
+		$scope.glamboxEditionData.children[i].data = (function(){
+				var graficoData = {
+					labels: [],
+					data: []
+				}
+				for(var j = 0; j < $scope.glamboxEditionData.children[i].subs.length; j++){
+					graficoData.labels.push($scope.glamboxEditionData.children[i].subs[j].subscriptionName);
+					graficoData.data.push($scope.glamboxEditionData.children[i].subs[j].subscriberCount);
+					
+				}
+
+				return graficoData;
+		})();
+	}
+
+	
+
+	console.log($scope.glamboxEditionData.children[0]);
+
+
 
 	//Funcções
 	function redirectIfInvalidURLParam(_tipoAssinatura){
@@ -56,7 +74,7 @@ controllers.assinaturasDetalheController = function($scope, $route, $location, G
 
 controllers.graficoHorizontalController = function($scope){
 	var glamboxEditionData = $scope.$parent.glamboxEditionData;
-    console.log($scope.$parent.glamboxEditionData);
+    // console.log($scope.$parent.glamboxEditionData);
 
     var graficoData = getData();
 
@@ -66,11 +84,7 @@ controllers.graficoHorizontalController = function($scope){
       graficoData.data
     ];
     $scope.options = {
-    	animation: {
-		    onAnimationComplete: Function(){
-		    	console.log('pronto');
-		    }
-		}
+    	responsiveAnimationDuration: 400
     }
 
 
