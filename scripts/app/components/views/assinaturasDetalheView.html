@@ -114,12 +114,12 @@
                 <li ng-repeat="sub in children.subs">
                   <a href="javascritp:void(0);">{{sub.subscriptionName}}
                   <span class="pull-right"><i class=""></i> 
-                    {{sub.subscriberCount}}</span>
+                    {{sub.subscriberCount | number:0}}</span>
                   </a>
                 </li>
                 <li><a href="javascritp:void(0);">Total
                   <span class="pull-right"><i class=""></i> 
-                    {{children.subscriberCount}}</span></a>
+                    {{children.subscriberCount | number:0}}</span></a>
                 </li>
               </ul>
             </div>
