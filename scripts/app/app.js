@@ -101,27 +101,78 @@ controllers.overviewController = function($scope, GlamboxEditionData){
 }
 
 controllers.assinaturasDetalheController = function($scope, $route, $location, GlamboxEditionData){
-	//se o parametro de url 'tipoAssinatura' for inválido, redirecionar para home
 	var tipoAssinatura = $route.current.params.tipoAssinatura;
-	if(tipoAssinatura != 'perdidas' && tipoAssinatura != 'mantidas' && tipoAssinatura != 'pendentes' && tipoAssinatura != 'conquistadas')
-		$location.path('/');
+
+	//se o parametro de url 'tipoAssinatura' for inválido, redirecionar para home
+	redirectIfInvalidURLParam(tipoAssinatura);
+	defineBoxType(tipoAssinatura);
 
 	$scope.pagina = {
 		titulo: 'Assinaturas ' + GlamboxEditionData.assinaturas[tipoAssinatura].group.name,
 		subtitulo: 'Visão geral'
 	}
-	console.log(GlamboxEditionData.assinaturas[tipoAssinatura]);
+
+	//Todas as informações da edição retornada pelo json.
+	$scope.glamboxEditionDataAll = GlamboxEditionData;
+	//informações específicas da página atual
 	$scope.glamboxEditionData = GlamboxEditionData.assinaturas[tipoAssinatura];
+	
 
-	//teste de gráficos
-	$scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-	    $scope.series = ['Series A', 'Series B'];
+	//Funcções
+	function redirectIfInvalidURLParam(_tipoAssinatura){
+		if(_tipoAssinatura != 'perdidas' && _tipoAssinatura != 'mantidas' && _tipoAssinatura != 'pendentes' && _tipoAssinatura != 'conquistadas')
+			$location.path('/');
+	}
 
-	    $scope.data = [
-	      [65, 59, 80, 81, 56, 55, 40],
-	      [28, 48, 40, 19, 86, 27, 90]
-	    ];
+	function defineBoxType(_tipoAssinatura){
+		switch(_tipoAssinatura) {
+		    case 'perdidas':
+		        $scope.boxType = 'box-danger';
+		        break;
+		    case 'mantidas':
+		        $scope.boxType = 'box-warning';
+		        break;
+		    case 'pendentes':
+		        $scope.boxType = 'box-info';
+		        break;
+		    case 'conquistadas':
+		        $scope.boxType = 'box-success';
+		        break;
+		}
+	}
+}
 
+controllers.graficoHorizontalController = function($scope){
+	var glamboxEditionData = $scope.$parent.glamboxEditionData;
+    console.log($scope.$parent.glamboxEditionData);
+
+    var graficoData = getData();
+
+	$scope.labels = graficoData.labels;
+    $scope.data = [
+      graficoData.data
+    ];
+    $scope.options = {
+        responsiveAnimationDuration: 600
+    }
+
+
+    function getData(){
+    	var graficoData = {
+    		labels: [],
+    		data: []
+    	}
+
+    	for(var i = 0; i < glamboxEditionData.subs.length; i++){
+    		if(glamboxEditionData.subs[i].subscriptionName != null){
+    			graficoData.labels.push(glamboxEditionData.subs[i].subscriptionName);
+    			graficoData.data.push(glamboxEditionData.subs[i].subscriberCount);
+    		}
+    	}
+
+    	return graficoData;
+    	
+    }
 }
 
 glamboxApp.controller(controllers);

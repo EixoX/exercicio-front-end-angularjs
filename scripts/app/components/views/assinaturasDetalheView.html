@@ -14,11 +14,67 @@
   <!-- Main content -->
   <section class="content">
     <!-- Your Page Content Here -->
-    Assinatura XXX
+
+    <div class="row">
+      <div class="col-md-2">
+
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">Situações</h3>
+
+            <div class="box-tools">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="box-body no-padding">
+            <ul class="nav nav-pills nav-stacked">
+              <li class="{{glamboxEditionData.group.name === 'Perdidas' ? 'active' : 'nada' }}"><a href="#!/assinaturas/perdidas"><i class="fa fa-thumbs-down"></i> Perdidas<span class="label label-danger pull-right">{{ glamboxEditionDataAll.assinaturas.perdidas.subscriberCount | number }}</span></a></li>
+              <li class="{{glamboxEditionData.group.name === 'Mantidas' ? 'active' : 'nada' }}"><a href="#!/assinaturas/mantidas"><i class="fa fa-smile-o"></i> Mantidas<span class="label label-warning pull-right">{{ glamboxEditionDataAll.assinaturas.mantidas.subscriberCount | number }}</span></a></li>
+              <li class="{{glamboxEditionData.group.name === 'Pendentes' ? 'active' : 'nada' }}"><a href="#!/assinaturas/pendentes"><i class="fa fa-clock-o"></i> Pendentes<span class="label label-info pull-right">{{ glamboxEditionDataAll.assinaturas.pendentes.subscriberCount | number }}</span></a></li>
+              <li class="{{glamboxEditionData.group.name === 'Conquistadas' ? 'active' : 'nada' }}"><a href="#!/assinaturas/conquistadas"><i class="fa fa-thumbs-up"></i> Conquistadas<span class="label label-success pull-right">{{ glamboxEditionDataAll.assinaturas.conquistadas.subscriberCount | number }}</span></a></li>
+            </ul>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <!-- /. box -->
+      </div>
+
+      <div class="col-md-10">
+        <div class="box {{boxType}}">
+          <div class="box-header with-border">
+            <h3 class="box-title">Total de assinaturas {{glamboxEditionData.group.name}} por tipo</h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="chart-responsive" ng-controller="graficoHorizontalController">
+
+                  <canvas id="base" class="chart-horizontal-bar" chart-data="data" chart-labels="labels" chart-options="options" >
+                  </canvas>
+
+                </div>
+                <!-- ./chart-responsive -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer no-padding">
+          </div>
+          <!-- /.footer -->
+        </div>
+        <!-- /.box -->
+      </div>
+    </div>
     
-    <canvas id="base" class="chart-horizontal-bar"
-      chart-data="data" chart-labels="labels" >
-    </canvas>
 
   </section>
   <!-- /.content -->
