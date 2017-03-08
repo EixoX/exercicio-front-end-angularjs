@@ -1,0 +1,27 @@
+{
+  "name": "exercicio-front-end-angularjs",
+  "version": "1.0.0",
+  "description": "Comprove seus super conhecimentos de javascript, de angular js e de frameworks css construindo um dashboard de página única que contenha informações de performance da empresa.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffersonRibeiro/exercicio-front-end-angularjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeffersonRibeiro/exercicio-front-end-angularjs/issues"
+  },
+  "homepage": "https://github.com/jeffersonRibeiro/exercicio-front-end-angularjs#readme",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglifycss": "^1.0.6"
+  }
+}

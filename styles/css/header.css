@@ -1,0 +1,8 @@
+.main-header a.logo {
+  /*background-color: $flat-blue-easyvalet!important;*/ }
+  .main-header a.logo .logo-lg, .main-header a.logo .logo-mini {
+    /*color: rgba(255, 255, 255, 0.8);*/ }
+    .main-header a.logo .logo-lg img, .main-header a.logo .logo-mini img {
+      width: 40px;
+      height: 40px;
+      opacity: 0.8; }
