@@ -98,7 +98,6 @@ controllers.overviewController = function($scope, GlamboxEditionData){
 }
 
 controllers.assinaturasDetalheController = function($scope, $route, $location, GlamboxEditionData){
-	console.log(GlamboxEditionData);
 	var tipoAssinatura = $route.current.params.tipoAssinatura;
 
 	//se o parametro de url 'tipoAssinatura' for inválido, redirecionar para home
