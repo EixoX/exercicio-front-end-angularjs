@@ -98,6 +98,7 @@ controllers.overviewController = function($scope, GlamboxEditionData){
 }
 
 controllers.assinaturasDetalheController = function($scope, $route, $location, GlamboxEditionData){
+	console.log(GlamboxEditionData);
 	var tipoAssinatura = $route.current.params.tipoAssinatura;
 
 	//se o parametro de url 'tipoAssinatura' for inválido, redirecionar para home
@@ -113,30 +114,30 @@ controllers.assinaturasDetalheController = function($scope, $route, $location, G
 	$scope.glamboxEditionDataAll = GlamboxEditionData;
 	//informações específicas da página atual
 	$scope.glamboxEditionData = GlamboxEditionData.assinaturas[tipoAssinatura];
-	
-	for(var i= 0; i < $scope.glamboxEditionData.children.length; i++){
-		$scope.glamboxEditionData.children[i].data = (function(){
-				var graficoData = {
-					labels: [],
-					data: []
-				}
-				for(var j = 0; j < $scope.glamboxEditionData.children[i].subs.length; j++){
-					graficoData.labels.push($scope.glamboxEditionData.children[i].subs[j].subscriptionName);
-					graficoData.data.push($scope.glamboxEditionData.children[i].subs[j].subscriberCount);
-					
-				}
-
-				return graficoData;
-		})();
-	}
+	definirGraficos($scope.glamboxEditionData);
 
 	
-
-	console.log($scope.glamboxEditionData.children[0]);
-
-
+	
 
 	//Funcções
+	function definirGraficos(_glamboxEditionData){
+		for(var i= 0; i < _glamboxEditionData.children.length; i++){
+			_glamboxEditionData.children[i].data = (function(){
+					var graficoData = {
+						labels: [],
+						data: []
+					}
+					for(var j = 0; j < _glamboxEditionData.children[i].subs.length; j++){
+						graficoData.labels.push(_glamboxEditionData.children[i].subs[j].subscriptionName);
+						graficoData.data.push(_glamboxEditionData.children[i].subs[j].subscriberCount);
+						
+					}
+
+					return graficoData;
+			})();
+		}
+	}
+	
 	function redirectIfInvalidURLParam(_tipoAssinatura){
 		if(_tipoAssinatura != 'perdidas' && _tipoAssinatura != 'mantidas' && _tipoAssinatura != 'pendentes' && _tipoAssinatura != 'conquistadas')
 			$location.path('/');
@@ -162,7 +163,6 @@ controllers.assinaturasDetalheController = function($scope, $route, $location, G
 
 controllers.graficoHorizontalController = function($scope){
 	var glamboxEditionData = $scope.$parent.glamboxEditionData;
-    // console.log($scope.$parent.glamboxEditionData);
 
     var graficoData = getData();
 

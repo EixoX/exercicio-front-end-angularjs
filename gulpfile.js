@@ -5,14 +5,14 @@ var concatcss = require('gulp-concat-css');
 var uglifycss = require('gulp-uglifycss');
 
 var paths = {
-  js: ['./scripts/app/app.module.js', './scripts/**/*.js', '!./scripts/**/app.js'],
+  js: ['./scripts/app/app.module.js', './scripts/**/*.js', '!./scripts/**/app.bundle.js'],
   css: './styles/css/*.css',
   scss: './styles/scss/*.scss'
 }
 
 gulp.task('js', function () {
   gulp.src(paths.js)
-    .pipe(concatjs('app.js'))
+    .pipe(concatjs('app.bundle.js'))
     .pipe(gulp.dest('./scripts/app/'))
 });
 
